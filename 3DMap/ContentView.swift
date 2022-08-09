@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ViewModel()
+    @StateObject var viewModel = ViewModel() // @ObservedObject
     @State var isLoaderVisible = false
     
     var body: some View {
@@ -16,7 +16,8 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 WebNavigationView(viewModel: viewModel)
 //                WebView(type: .local, url: "Site/local", viewModel: viewModel)
-                WebView(type: .public, url: "https://go.2gis.com/csytr", viewModel: viewModel)
+//                WebView(type: .public, url: "https://go.2gis.com/csytr", viewModel: viewModel)
+                WebView(type: .local, url: "Site/index", viewModel: viewModel)
                 
             }
             .onReceive(self.viewModel.isLoaderVisible.receive(on: RunLoop.main)) { value in

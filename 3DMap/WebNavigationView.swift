@@ -10,6 +10,7 @@ import SwiftUI
 struct WebNavigationView: View {
     @ObservedObject var viewModel: ViewModel
     @State var webTitle = ""
+    
     var body: some View {
         VStack {
             Divider()
